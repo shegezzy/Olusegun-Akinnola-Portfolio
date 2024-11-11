@@ -1,44 +1,42 @@
-# Olusegun Akinnola Personal Portfolio Website 
-A great professional Portfolio website of Olusegun Akinnola. A summary of my professional experience, skills, projects details and contact information.
+# Personal Portfolio Website
 
-## Feature List and Screenshots
-### [Visit Website](https://olusegunakinnola.netlify.app/)
+This repository contains the source code and files for my personal portfolio website. The website is built using HTML, CSS, and JavaScript.
 
-### Features
-```
-1. Dark and Light themes
-2. Auto switch to dark mode based on browser/OS setting
-3. PWA features
-4. Offline caching
-5. Fully responsive for all screen sizes
+/Users/mac/Desktop/web/assets/img/readme/light.png
 
+## Description
 
-### Improvements
-```
-1. Improve lighthouse score
-```
+The personal portfolio website showcases my skills, projects, and experiences as a web developer. It serves as an online platform to highlight my work and provide information about my background and expertise.
 
-### Switch between light and dark theme
+## Features
 
-<img width="1421" alt="Light theme about me section" src="assets/img/readme/light.png">
-<img width="1420" alt="Dark theme about me section" src="assets/img/readme/dark.png">
+- Home: Introduces myself and provides a brief overview of my skills and interests.
+- About: Details my professional background, education, and relevant experience.
+- Projects: Showcases the projects I have worked on, including descriptions, screenshots, and links to live demos or repositories.
+- Skills: Lists the programming languages, frameworks, and tools I am proficient in.
+- Contact: Offers various ways to get in touch with me, such as through email, social media, or a contact form.
 
-### Other sections of portfolio website
+## Technologies Used
 
-<img width="1376" alt="Screenshot 2024-02-13 at 5 58 08 PM" src="assets/img/readme/about.png">
-<img width="1376" alt="Screenshot 2024-02-13  at 5 58 29 PM" src="assets/img/readme/services.png">
-<img width="1129" alt="Screenshot 2024-02-13  at 5 59 24 PM" src="assets/img/readme/skills.png">
-<img width="1330" alt="Screenshot 2024-02-13  at 5 59 49 PM" src="assets/img/readme/contact1.png">
+- HTML: Markup language used for structuring the website.
+- CSS: Stylesheet language used for designing and formatting the website.
+- JavaScript: Programming language used for adding interactivity and dynamic features.
 
-### Mobile and Tablet responsive layout
-<img width="337" alt="Screenshot 2024-02-13   at 6 14 16 PM" src="assets/img/readme/1.png">
-<img width="337" alt="Screenshot 2024-02-13   at 6 14 16 PM" src="assets/img/readme/2.png">
-<img width="337" alt="Screenshot 2024-02-13   at 6 14 16 PM" src="assets/img/readme/3.png">
-<img width="337" alt="Screenshot 2024-02-13   at 6 14 16 PM" src="assets/img/readme/4.png">
+## Getting Started
 
+To view the website locally or make modifications, follow these steps:
 
+1. Clone the repository: `git clone [repository URL]`
+2. Open the project folder in your preferred code editor.
+3. Open the `index.html` file in a web browser to view the website.
 
-## Author
+## Contributing
 
-Email - shegezzy@gmail.com
-Portfolio - https://olusegunakinnola.netlify.app
+I appreciate any suggestions, feedback, or contributions to enhance this personal portfolio website. If you would like to contribute, please follow the guidelines in the `CONTRIBUTING.md` file.
+
+## Contact
+
+If you have any questions or inquiries, please feel free to reach out to me through the contact information provided in the website or by using the contact form.
+
+Thank you for visiting my personal portfolio repository! I hope you find it informative and visually appealing.
+![Portfolio](https://github.com/shegezzy/Olusegun-Akinnola-Portfolio/)
