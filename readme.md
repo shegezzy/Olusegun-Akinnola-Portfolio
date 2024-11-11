@@ -3,7 +3,7 @@
 This repository contains the source code and files for my personal portfolio website. The website is built using HTML, CSS, and JavaScript.
 
 
-[Alt text](/Users/mac/Desktop/web/assets/img/readme/light.png)
+[Alt text](https://github.com/shegezzy/Olusegun-Akinnola-Portfolio/blob/master/assets/img/readme/dark.png)
 
 
 ## Description
