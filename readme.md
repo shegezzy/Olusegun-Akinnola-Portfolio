@@ -8,7 +8,7 @@ This repository contains the source code and files for my personal portfolio web
 
 ## Description
 
-The personal portfolio website showcases my skills, projects, and experiences as a web developer. It serves as an online platform to highlight my work and provide information about my background and expertise.
+The personal portfolio website showcases my skills, projects, and experiences as a Cloud/Devops Engineer. It serves as an online platform to highlight my work and provide information about my background and expertise.
 
 ## Features
 
@@ -24,13 +24,6 @@ The personal portfolio website showcases my skills, projects, and experiences as
 - CSS: Stylesheet language used for designing and formatting the website.
 - JavaScript: Programming language used for adding interactivity and dynamic features.
 
-## Getting Started
-
-To view the website locally or make modifications, follow these steps:
-
-1. Clone the repository: `git clone [repository URL]`
-2. Open the project folder in your preferred code editor.
-3. Open the `index.html` file in a web browser to view the website.
 
 ## Contributing
 
