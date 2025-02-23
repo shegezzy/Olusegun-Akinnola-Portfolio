@@ -27,7 +27,7 @@ The personal portfolio website showcases my skills, projects, and experiences as
 
 ## Contributing
 
-I appreciate any suggestions, feedback, or contributions to enhance this personal portfolio website. If you would like to contribute, please follow the guidelines in the `CONTRIBUTING.md` file.
+I appreciate any suggestions, feedback, or contributions to enhance this personal portfolio website.
 
 ## Contact
 
