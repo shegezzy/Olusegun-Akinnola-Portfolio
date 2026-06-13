@@ -1,6 +1,6 @@
 # Olusegun Akinnola - Portfolio Website
 
-A world-class, interactive portfolio website showcasing my skills, projects, and professional journey as a Full-Stack Software Engineer.
+An interactive portfolio website showcasing my skills, projects, and professional journey as a Full-Stack Software Engineer.
 
 ## 🌟 Features
 
