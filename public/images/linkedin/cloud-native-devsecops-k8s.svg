@@ -1,0 +1,50 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07131A"/>
+      <stop offset="1" stop-color="#132638"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="400" y1="160" x2="1200" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="0.5" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <path d="M100 700C250 590 390 560 560 610C720 655 900 690 1100 610C1260 546 1390 510 1510 520" stroke="url(#accent)" stroke-width="4" stroke-linecap="round" stroke-dasharray="14 16" opacity="0.55"/>
+  <path d="M140 190C340 90 570 90 770 160C960 225 1140 250 1370 185" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="3" stroke-linecap="round"/>
+
+  <g filter="url(#glow)">
+    <path d="M660 365C660 292 717 234 788 234C842 234 889 268 908 317C918 313 929 310 941 310C996 310 1040 354 1040 409C1040 464 996 508 941 508H675C612 508 560 456 560 393C560 335 603 287 660 278" fill="#13253D" stroke="url(#accent)" stroke-width="4"/>
+    <path d="M680 368C680 314 723 270 777 270C820 270 856 296 871 334C879 331 888 329 898 329C939 329 972 362 972 403C972 444 939 477 898 477H701C653 477 614 438 614 390C614 346 647 308 690 298" fill="#1A3556" opacity="0.95"/>
+    <circle cx="758" cy="390" r="18" fill="#22D3EE"/>
+    <circle cx="848" cy="385" r="18" fill="#8B5CF6"/>
+    <circle cx="939" cy="397" r="18" fill="#34D399"/>
+    <path d="M758 390L848 385L939 397" stroke="#EAF7FF" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 10"/>
+
+    <rect x="270" y="610" width="258" height="126" rx="22" fill="#12263E" stroke="#22D3EE" stroke-opacity="0.4"/>
+    <rect x="1090" y="610" width="258" height="126" rx="22" fill="#12263E" stroke="#34D399" stroke-opacity="0.4"/>
+    <text x="399" y="667" text-anchor="middle" fill="#EAF7FF" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Cloud Native</text>
+    <text x="399" y="704" text-anchor="middle" fill="#B7C4D6" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500">AWS, DevSecOps, Kubernetes</text>
+    <text x="1219" y="667" text-anchor="middle" fill="#EAF7FF" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Platform Security</text>
+    <text x="1219" y="704" text-anchor="middle" fill="#B7C4D6" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500">Reliable systems at scale</text>
+  </g>
+
+  <g opacity="0.9">
+    <text x="800" y="835" text-anchor="middle" fill="#EAF7FF" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Mastering Cloud-Native Application</text>
+    <text x="800" y="868" text-anchor="middle" fill="#B7C4D6" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500">AWS, DevSecOps, and Kubernetes</text>
+  </g>
+
+  <g opacity="0.12">
+    <circle cx="240" cy="230" r="120" fill="#22D3EE"/>
+    <circle cx="1370" cy="680" r="140" fill="#8B5CF6"/>
+  </g>
+</svg>
