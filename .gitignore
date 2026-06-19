@@ -2,6 +2,8 @@
 /.next
 /out
 /coverage
+/v1
+/v2
 
 .DS_Store
 *.log
@@ -13,4 +15,10 @@
 .env.test.local
 .env.production.local
 !.env.example
+.AGENTS.md
+.gitignore
+.netlify.toml
+
 AGENTS.md
+gitignore
+netlify.toml
