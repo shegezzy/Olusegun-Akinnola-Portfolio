@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import CloudWatchdogSection from '@/components/services/CloudWatchdogSection';
+import FaqSection from '@/components/services/FaqSection';
+import FinalCtaSection from '@/components/services/FinalCtaSection';
 import HowIWorkSection from '@/components/services/HowIWorkSection';
 import MetricsStrip from '@/components/services/MetricsStrip';
 import ProblemsSection from '@/components/services/ProblemsSection';
@@ -17,6 +19,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/services',
   },
+  openGraph: {
+    type: 'website',
+    url: '/services',
+    title: 'Cloud & DevOps Services | Olusegun Akinnola',
+    description:
+      'AWS, DevOps, cloud infrastructure, cost optimization, security, CI/CD, observability, and reliability services for startups and engineering teams.',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Olusegun Akinnola — Software Engineer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud & DevOps Services | Olusegun Akinnola',
+    description:
+      'AWS, DevOps, cloud infrastructure, cost optimization, security, CI/CD, observability, and reliability services for startups and engineering teams.',
+    images: ['/opengraph-image'],
+  },
 };
 
 export default function ServicesPage() {
@@ -30,6 +54,8 @@ export default function ServicesPage() {
       <ProofSection />
       <WhoIWorkWithSection />
       <CloudWatchdogSection />
+      <FaqSection />
+      <FinalCtaSection />
     </>
   );
 }

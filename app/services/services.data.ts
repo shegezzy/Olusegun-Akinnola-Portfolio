@@ -44,6 +44,11 @@ export interface WatchdogOffering {
   disclaimer: string;
 }
 
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 export type ServiceCurrency = 'EUR' | 'USD' | 'NGN';
 
 export const sellingRatesInNgn = {
@@ -309,3 +314,36 @@ export const watchdogOffering: WatchdogOffering = {
   ],
   disclaimer: 'A starting offering, not an SLA or 24/7 support package.',
 };
+
+export const faqItems: readonly FaqItem[] = [
+  {
+    question: 'Do you work with startups?',
+    answer:
+      'Yes. My services are designed particularly for startups and small engineering teams that need practical cloud and DevOps support without necessarily hiring a full-time DevOps engineer.',
+  },
+  {
+    question: 'Do you only work with AWS?',
+    answer:
+      'AWS is my primary cloud platform. I also have experience with Azure and cloud-native infrastructure.',
+  },
+  {
+    question: 'Can you implement the recommendations from an audit?',
+    answer:
+      'Yes. Where appropriate, recommendations can be followed by an implementation engagement.',
+  },
+  {
+    question: 'Do I need a full-time DevOps engineer?',
+    answer:
+      'Not necessarily. Some teams only need periodic infrastructure reviews, optimization, deployment support, or ongoing cloud monitoring.',
+  },
+  {
+    question: 'Can you troubleshoot an existing production environment?',
+    answer:
+      'Yes. Production troubleshooting, incident response, root-cause analysis, and infrastructure remediation are part of my experience.',
+  },
+  {
+    question: 'Do you provide 24/7 support?',
+    answer:
+      'Support arrangements depend on the engagement. The standard services focus on scheduled reviews, implementation work, and technical troubleshooting rather than guaranteed 24/7 support.',
+  },
+];

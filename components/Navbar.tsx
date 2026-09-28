@@ -1,12 +1,14 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import ThemeToggle from './ThemeToggle';
 
 const Navbar: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -20,7 +22,16 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMenuOpen]);
 
-  const scrollToSection = (sectionId: string) => {
+  const handleSectionClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
+    if (pathname !== '/') {
+      setIsMenuOpen(false);
+      return;
+    }
+
+    event.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -29,10 +40,11 @@ const Navbar: React.FC = () => {
   };
 
   const navLinks = [
-    { label: 'Skills', id: 'skills' },
-    { label: 'Experience', id: 'experience' },
-    { label: 'Projects', id: 'projects' },
-    { label: 'Contact', id: 'contact' },
+    { label: 'Skills', href: '/#skills', id: 'skills' },
+    { label: 'Experience', href: '/#experience', id: 'experience' },
+    { label: 'Projects', href: '/#projects', id: 'projects' },
+    { label: 'Contact', href: '/#contact', id: 'contact' },
+    { label: 'Services', href: '/services' },
   ];
 
   if (!mounted) {
@@ -68,14 +80,15 @@ const Navbar: React.FC = () => {
 
         {/* Center Navigation - Hidden on mobile */}
         <div className='hidden lg:flex items-center gap-8'>
-          {navLinks.map(({ label, id }) => (
-            <button
-              key={id}
-              onClick={() => scrollToSection(id)}
+          {navLinks.map(({ label, href, id }) => (
+            <a
+              key={href}
+              href={href}
+              onClick={id ? (event) => handleSectionClick(event, id) : undefined}
               className='text-sm text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors'
             >
               {label}
-            </button>
+            </a>
           ))}
         </div>
 
@@ -113,14 +126,18 @@ const Navbar: React.FC = () => {
         isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
       } bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-neutral-dark`}>
         <div className='px-5 md:px-20 py-6 flex flex-col gap-1'>
-          {navLinks.map(({ label, id }) => (
-            <button
-              key={id}
-              onClick={() => scrollToSection(id)}
+          {navLinks.map(({ label, href, id }) => (
+            <a
+              key={href}
+              href={href}
+              onClick={(event) => {
+                if (id) handleSectionClick(event, id);
+                else setIsMenuOpen(false);
+              }}
               className='text-left py-3 text-base font-medium text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light border-b border-gray-100 dark:border-neutral-dark/30 last:border-b-0 transition-colors'
             >
               {label}
-            </button>
+            </a>
           ))}
           <a
             href="https://drive.google.com/file/d/1ZYgVMZegbVinlOMN1r4XUvk5xF_lwopQ/view?usp=sharing"

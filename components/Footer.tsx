@@ -2,8 +2,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -11,7 +13,13 @@ const Footer = () => {
     });
   };
 
-  const scrollToSection = (sectionId: string) => {
+  const handleSectionClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
+    if (pathname !== '/') return;
+
+    event.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -80,36 +88,48 @@ const Footer = () => {
             <h3 className="text-sm uppercase tracking-widest font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <button 
-                  onClick={() => scrollToSection('skills')}
+                <a
+                  href="/#skills"
+                  onClick={(event) => handleSectionClick(event, 'skills')}
                   className="text-sm text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors"
                 >
                   Skills
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('experience')}
+                <a
+                  href="/#experience"
+                  onClick={(event) => handleSectionClick(event, 'experience')}
                   className="text-sm text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors"
                 >
                   Experience
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('projects')}
+                <a
+                  href="/#projects"
+                  onClick={(event) => handleSectionClick(event, 'projects')}
                   className="text-sm text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors"
                 >
                   Projects
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('contact')}
+                <a
+                  href="/#contact"
+                  onClick={(event) => handleSectionClick(event, 'contact')}
                   className="text-sm text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors"
                 >
                   Contact
-                </button>
+                </a>
+              </li>
+              <li>
+                <Link
+                  href="/services"
+                  className="text-sm text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors"
+                >
+                  Services
+                </Link>
               </li>
             </ul>
           </div>
