@@ -13,6 +13,16 @@ export interface ServiceOffering {
   note?: string;
 }
 
+export interface ServiceMetric {
+  value: string;
+  label: string;
+}
+
+export interface ProofEntry {
+  name: string;
+  summary: string;
+}
+
 export type ServiceCurrency = 'EUR' | 'USD' | 'NGN';
 
 export const sellingRatesInNgn = {
@@ -51,6 +61,21 @@ export const serviceProblems: readonly ServiceProblem[] = [
     title: 'Production incidents keep happening',
     description:
       'Investigate incidents, perform root-cause analysis, and improve operational reliability.',
+  },
+];
+
+export const serviceMetrics: readonly ServiceMetric[] = [
+  {
+    value: '99.9%',
+    label: 'Availability maintained for critical services',
+  },
+  {
+    value: '15%',
+    label: 'Cloud infrastructure cost reduction',
+  },
+  {
+    value: '40%',
+    label: 'Shorter release cycles through CI/CD automation',
   },
 ];
 
@@ -159,5 +184,43 @@ export const serviceOfferings: readonly ServiceOffering[] = [
     price: 'Custom',
     ctaLabel: 'Discuss a Production Issue',
     mailtoSubject: 'Production troubleshooting enquiry',
+  },
+];
+
+export const proofEntries: readonly ProofEntry[] = [
+  {
+    name: 'Divverse',
+    summary:
+      'AWS infrastructure with Terraform, Docker, ECS Fargate and Kubernetes; 99.9% availability; 15% infrastructure cost reduction; GitHub Actions CI/CD.',
+  },
+  {
+    name: 'Wema Bank',
+    summary:
+      'CI/CD with GitHub Actions, Docker and Terraform; Prometheus, Grafana and CloudWatch monitoring; 99.9% uptime for critical banking services.',
+  },
+  {
+    name: 'United Bank of Africa',
+    summary:
+      'Backend engineering on .NET Core microservices handling 1,000+ requests per second.',
+  },
+  {
+    name: 'Loubby AI',
+    summary:
+      'Cloud infrastructure, CI/CD with automated deployments and rollbacks, Infrastructure as Code, observability.',
+  },
+  {
+    name: 'Cybermap',
+    summary:
+      'AWS infrastructure, Docker, Terraform, GitHub Actions, CloudWatch, Prometheus.',
+  },
+  {
+    name: 'ICE Queue',
+    summary:
+      'GitHub Actions, ECS, ECR, Docker, monitoring and deployment lifecycle.',
+  },
+  {
+    name: 'Digital Encode',
+    summary:
+      'AWS infrastructure, Kubernetes, Docker, Terraform, GitHub Actions, Jenkins, Prometheus.',
   },
 ];

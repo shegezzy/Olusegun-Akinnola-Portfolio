@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import MetricsStrip from '@/components/services/MetricsStrip';
 import ProblemsSection from '@/components/services/ProblemsSection';
+import ProofSection from '@/components/services/ProofSection';
 import ServicesHero from '@/components/services/ServicesHero';
 import ServicesGrid from '@/components/services/ServicesGrid';
 
@@ -18,8 +20,10 @@ export default function ServicesPage() {
   return (
     <>
       <ServicesHero />
+      <MetricsStrip />
       <ProblemsSection />
       <ServicesGrid />
+      <ProofSection />
     </>
   );
 }
