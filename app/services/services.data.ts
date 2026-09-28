@@ -23,6 +23,27 @@ export interface ProofEntry {
   summary: string;
 }
 
+export interface WorkStep {
+  title: string;
+  description: string;
+}
+
+export interface ClientType {
+  title: string;
+  description: string;
+}
+
+export interface WatchdogOffering {
+  heading: string;
+  description: string;
+  title: string;
+  price: string;
+  ctaLabel: string;
+  mailtoSubject: string;
+  bullets: readonly string[];
+  disclaimer: string;
+}
+
 export type ServiceCurrency = 'EUR' | 'USD' | 'NGN';
 
 export const sellingRatesInNgn = {
@@ -224,3 +245,67 @@ export const proofEntries: readonly ProofEntry[] = [
       'AWS infrastructure, Kubernetes, Docker, Terraform, GitHub Actions, Jenkins, Prometheus.',
   },
 ];
+
+export const workSteps: readonly WorkStep[] = [
+  {
+    title: 'Understand',
+    description:
+      'Understand the application, infrastructure, current problem, and business impact.',
+  },
+  {
+    title: 'Assess',
+    description:
+      'Review the relevant infrastructure, deployment workflows, costs, security controls, or observability setup.',
+  },
+  {
+    title: 'Recommend',
+    description:
+      'Provide clear, prioritized recommendations instead of overwhelming the client with unnecessary changes.',
+  },
+  {
+    title: 'Implement',
+    description:
+      'Where requested, implement the agreed improvements and document the resulting setup.',
+  },
+];
+
+export const clientTypes: readonly ClientType[] = [
+  {
+    title: 'Startups',
+    description:
+      'Teams building products without a dedicated DevOps engineer.',
+  },
+  {
+    title: 'SaaS companies',
+    description: 'Companies running production applications on AWS.',
+  },
+  {
+    title: 'Engineering teams',
+    description:
+      'Teams that need infrastructure, deployment, or reliability support.',
+  },
+  {
+    title: 'Small businesses',
+    description:
+      'Businesses that need reliable cloud infrastructure without hiring a full-time cloud engineer.',
+  },
+];
+
+export const watchdogOffering: WatchdogOffering = {
+  heading: 'Ongoing AWS support without hiring a full-time DevOps engineer',
+  description:
+    'For teams that want ongoing visibility into cloud costs, infrastructure health, and operational risks without committing to a full-time DevOps hire.',
+  title: 'AWS Cloud Watchdog',
+  price: 'From €100/month',
+  ctaLabel: 'Ask About Cloud Watchdog',
+  mailtoSubject: 'AWS Cloud Watchdog enquiry',
+  bullets: [
+    'Monthly AWS cost review',
+    'Resource review',
+    'Basic security checks',
+    'Infrastructure recommendations',
+    'Monthly report',
+    'One short monthly consultation',
+  ],
+  disclaimer: 'A starting offering, not an SLA or 24/7 support package.',
+};
