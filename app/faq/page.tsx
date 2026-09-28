@@ -5,6 +5,7 @@ import FinalCtaSection from '@/components/services/FinalCtaSection';
 export const metadata: Metadata = {
   title: 'FAQ',
   description: 'Answers about cloud and DevOps services, engagements, and support.',
+  keywords: ['Cloud DevOps FAQ', 'AWS support', 'DevOps services'],
   alternates: { canonical: '/faq' },
 };
 

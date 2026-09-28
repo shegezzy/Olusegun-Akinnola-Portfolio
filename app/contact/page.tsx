@@ -4,6 +4,7 @@ import ContactSection from '@/components/sections/ContactSection';
 export const metadata: Metadata = {
   title: 'Contact',
   description: 'Contact Olusegun Akinnola about cloud, DevOps, and platform engineering work.',
+  keywords: ['Contact DevOps Engineer', 'Cloud Engineering', 'Platform Engineering'],
   alternates: { canonical: '/contact' },
 };
 

@@ -301,7 +301,7 @@ export const watchdogOffering: WatchdogOffering = {
   description:
     'For teams that want ongoing visibility into cloud costs, infrastructure health, and operational risks without committing to a full-time DevOps hire.',
   title: 'AWS Cloud Watchdog',
-  price: 'From €100/month',
+  price: 'From $117/month',
   ctaLabel: 'Ask About Cloud Watchdog',
   mailtoSubject: 'AWS Cloud Watchdog enquiry',
   bullets: [

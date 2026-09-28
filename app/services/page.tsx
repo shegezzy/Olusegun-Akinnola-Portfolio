@@ -7,8 +7,6 @@ import ProblemsSection from '@/components/services/ProblemsSection';
 import ProofSection from '@/components/services/ProofSection';
 import ServicesHero from '@/components/services/ServicesHero';
 import ServicesGrid from '@/components/services/ServicesGrid';
-import WhoIWorkWithSection from '@/components/services/WhoIWorkWithSection';
-import TestimonialsSection from '@/components/sections/TestimonialsSection';
 
 export const metadata: Metadata = {
   title: {
@@ -52,8 +50,6 @@ export default function ServicesPage() {
       <ServicesGrid />
       <HowIWorkSection />
       <ProofSection />
-      <TestimonialsSection />
-      <WhoIWorkWithSection />
       <CloudWatchdogSection />
       <FinalCtaSection />
     </>

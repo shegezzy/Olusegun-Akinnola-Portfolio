@@ -45,7 +45,7 @@ function formatServicePrice(price: string, currency: ServiceCurrency) {
 }
 
 export default function ServicesGrid() {
-  const [currency, setCurrency] = useState<ServiceCurrency>('EUR');
+  const [currency, setCurrency] = useState<ServiceCurrency>('USD');
 
   return (
     <Section

@@ -1,7 +1,15 @@
+'use client';
+
+import { useEffect } from 'react';
+import AOS from 'aos';
 import { clientTypes } from '@/app/services/services.data';
 import Section from './Section';
 
 export default function WhoIWorkWithSection() {
+  useEffect(() => {
+    AOS.init({ duration: 600, once: true });
+  }, []);
+
   return (
     <Section
       heading="Who I work with"
