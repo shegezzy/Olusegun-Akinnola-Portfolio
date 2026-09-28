@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import ServicesHero from '@/components/services/ServicesHero';
 
 export const metadata: Metadata = {
   title: {
@@ -12,5 +13,5 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  return <h1>Cloud &amp; DevOps Services</h1>;
+  return <ServicesHero />;
 }
