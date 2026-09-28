@@ -9,6 +9,8 @@ const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const isPortfolio = pathname === '/portfolio';
+  const isServicesPage = pathname === '/services';
 
   useEffect(() => {
     setMounted(true);
@@ -25,8 +27,9 @@ const Navbar: React.FC = () => {
   const handleSectionClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string,
+    route: string,
   ) => {
-    if (pathname !== '/') {
+    if (pathname !== route) {
       setIsMenuOpen(false);
       return;
     }
@@ -39,22 +42,39 @@ const Navbar: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  const navLinks = [
-    { label: 'Skills', href: '/#skills', id: 'skills' },
-    { label: 'Experience', href: '/#experience', id: 'experience' },
-    { label: 'Projects', href: '/#projects', id: 'projects' },
-    { label: 'Contact', href: '/#contact', id: 'contact' },
-    { label: 'Services', href: '/services' },
-  ];
+  const navLinks = isPortfolio
+    ? [
+        { label: 'Skills', href: '/portfolio#skills', id: 'skills', route: '/portfolio' },
+        { label: 'Experience', href: '/portfolio#experience', id: 'experience', route: '/portfolio' },
+        { label: 'Projects', href: '/portfolio#projects', id: 'projects', route: '/portfolio' },
+        { label: 'Contact', href: '/portfolio#contact', id: 'contact', route: '/portfolio' },
+        { label: 'Services', href: '/', route: '/' },
+        { label: 'FAQ', href: '/faq', route: '/faq' },
+      ]
+    : isServicesPage
+    ? [
+        { label: 'Services', href: '/services#services', id: 'services', route: '/services' },
+        { label: 'How I Work', href: '/services#how-i-work', id: 'how-i-work', route: '/services' },
+        { label: 'Work', href: '/portfolio', route: '/portfolio' },
+        { label: "Let's Talk", href: '/contact', route: '/contact', cta: true },
+        { label: 'FAQ', href: '/faq', route: '/faq' },
+      ]
+    : [
+        { label: 'Services', href: '/services', route: '/services' },
+        { label: 'Portfolio', href: '/portfolio', route: '/portfolio' },
+        { label: 'About', href: '/about', route: '/about' },
+        { label: "Let's Talk", href: '/contact', route: '/contact', cta: true },
+        { label: 'FAQ', href: '/faq', route: '/faq' },
+      ];
 
   if (!mounted) {
     return (
       <nav className='fixed top-0 left-0 right-0 w-full py-6 bg-background-light dark:bg-background-dark z-40'>
         <div className='max-w-7xl mx-auto px-5 md:px-20 flex justify-between items-center'>
-          <div className='flex items-center gap-3'>
+          <a href="/" className='flex items-center gap-3'>
             <Image src="/images/my-image.jpeg" alt="" width={40} height={40} className='rounded-full object-cover w-10 h-10' />
             <div className='font-semibold text-base'>Olusegun Akinnola</div>
-          </div>
+          </a>
         </div>
       </nav>
     );
@@ -68,24 +88,27 @@ const Navbar: React.FC = () => {
     }`}>
       <div className='max-w-7xl mx-auto px-5 md:px-20 py-6 flex justify-between items-center'>
         {/* Logo */}
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className='flex items-center gap-3 cursor-pointer group'
-        >
+        <a href="/" className='flex items-center gap-3 cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:focus-visible:ring-primary-light'>
           <Image src="/images/my-image.jpeg" alt="" width={40} height={40} className='rounded-full object-cover w-10 h-10' />
           <div className='font-semibold text-base group-hover:text-primary dark:group-hover:text-primary-light transition-colors'>
             Olusegun Akinnola
           </div>
-        </button>
+        </a>
 
         {/* Center Navigation - Hidden on mobile */}
         <div className='hidden lg:flex items-center gap-8'>
-          {navLinks.map(({ label, href, id }) => (
+          {navLinks.map(({ label, href, id, route, cta }) => (
             <a
               key={href}
               href={href}
-              onClick={id ? (event) => handleSectionClick(event, id) : undefined}
-              className='text-sm text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors'
+              onClick={id ? (event) => handleSectionClick(event, id, route) : undefined}
+              className={cta && pathname === route
+                ? 'bg-gray-800 px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-80 dark:bg-neutral-light dark:text-background-dark'
+                : cta
+                ? 'text-sm text-[#656464] transition-colors hover:text-[#232121] dark:text-neutral-light dark:hover:text-background-light'
+                : `text-sm transition-colors ${pathname === route
+                  ? 'font-semibold text-[#232121] dark:text-background-light'
+                  : 'text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light'}`}
             >
               {label}
             </a>
@@ -126,15 +149,21 @@ const Navbar: React.FC = () => {
         isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
       } bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-neutral-dark`}>
         <div className='px-5 md:px-20 py-6 flex flex-col gap-1'>
-          {navLinks.map(({ label, href, id }) => (
+          {navLinks.map(({ label, href, id, route, cta }) => (
             <a
               key={href}
               href={href}
               onClick={(event) => {
-                if (id) handleSectionClick(event, id);
+                if (id) handleSectionClick(event, id, route);
                 else setIsMenuOpen(false);
               }}
-              className='text-left py-3 text-base font-medium text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light border-b border-gray-100 dark:border-neutral-dark/30 last:border-b-0 transition-colors'
+              className={cta && pathname === route
+                ? 'mt-3 bg-gray-800 px-4 py-3 text-center text-base font-medium text-white transition-opacity hover:opacity-80 dark:bg-neutral-light dark:text-background-dark'
+                : cta
+                ? 'text-left py-3 text-base font-medium text-[#656464] transition-colors hover:text-[#232121] dark:text-neutral-light dark:hover:text-background-light'
+                : `text-left py-3 text-base font-medium border-b border-gray-100 dark:border-neutral-dark/30 last:border-b-0 transition-colors ${pathname === route
+                  ? 'text-[#232121] dark:text-background-light'
+                  : 'text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light'}`}
             >
               {label}
             </a>

@@ -22,7 +22,7 @@ export default function ServicesHero() {
           Cloud &amp; DevOps Services
         </p>
 
-        <h1 className="mb-6 max-w-6xl break-words font-[Monument-R] text-[clamp(2.25rem,9vw,110px)] uppercase leading-[1.05] tracking-tight text-text-primary dark:text-background-light sm:text-[clamp(3rem,9vw,110px)]">
+        <h1 className="mb-6 max-w-5xl break-words font-[Monument-R] text-[clamp(1.75rem,5vw,55px)] uppercase leading-[1.05] tracking-tight text-text-primary dark:text-background-light sm:text-[clamp(2rem,5vw,55px)]">
           Reliable cloud infrastructure without unnecessary complexity.
         </h1>
 
@@ -42,7 +42,7 @@ export default function ServicesHero() {
             />
           </a>
           <a
-            href="/#projects"
+            href="/portfolio"
             className={`group inline-flex justify-center gap-2 border border-gray-800 px-6 py-3 text-sm font-medium transition-all duration-200 hover:bg-gray-800 hover:text-white dark:border-neutral-light dark:hover:bg-neutral-light dark:hover:text-background-dark sm:justify-start ${focusStyles}`}
           >
             View My Work

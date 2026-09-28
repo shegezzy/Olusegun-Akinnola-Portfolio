@@ -64,7 +64,7 @@ const HeroSection: React.FC = () => {
         </div>
 
         {/* Heading */}
-        <h1 className="font-[Monument-R] uppercase text-[clamp(3rem,9vw,110px)] leading-[1.05] tracking-tight text-[#232121] dark:text-background-light mb-6">
+        <h1 className="font-[Monument-R] uppercase text-[clamp(2.5rem,7vw,78px)] leading-[1.05] tracking-tight text-[#232121] dark:text-background-light mb-6">
           Software<br />Engineer
         </h1>
 

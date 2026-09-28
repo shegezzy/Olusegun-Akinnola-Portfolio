@@ -1,45 +1,66 @@
-"use client";
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import MetricsStrip from '@/components/services/MetricsStrip';
+import ServicesHero from '@/components/services/ServicesHero';
 
-import { useEffect, useState } from "react";
-import HeroSection from "@/components/sections/HeroSection";
-import SkillsSection from "@/components/sections/SkillsSection";
-import JobExperience from "@/components/Home/JobExperience";
-import ProjectsSection from "@/components/sections/ProjectsSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import GitHubSection from "@/components/sections/GitHubSection";
-import LinkedInSection from "@/components/sections/LinkedInSection";
-import ContactSection from "@/components/sections/ContactSection";
+export const metadata: Metadata = {
+  title: { absolute: 'Cloud & DevOps Services | Olusegun Akinnola' },
+  description:
+    'AWS, DevOps, cloud infrastructure, cost optimization, security, CI/CD, observability, and reliability services for startups and engineering teams.',
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    url: '/',
+    title: 'Cloud & DevOps Services | Olusegun Akinnola',
+    description:
+      'AWS, DevOps, cloud infrastructure, cost optimization, security, CI/CD, observability, and reliability services for startups and engineering teams.',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Olusegun Akinnola — Software Engineer' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud & DevOps Services | Olusegun Akinnola',
+    description:
+      'AWS, DevOps, cloud infrastructure, cost optimization, security, CI/CD, observability, and reliability services for startups and engineering teams.',
+    images: ['/opengraph-image'],
+  },
+};
 
-export default function Home() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+const destinations = [
+  { href: '/services', label: 'Services', text: 'Focused technical services for teams running applications in the cloud.' },
+  { href: '/portfolio', label: 'Portfolio', text: 'Explore skills, experience, projects, and production work.' },
+  { href: '/about', label: 'About', text: 'Learn more about my engineering focus and approach.' },
+  { href: '/faq', label: 'FAQ', text: 'Answers about engagements, cloud platforms, and support.' },
+];
 
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      setPosition({ x: event.clientX, y: event.clientY });
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
+export default function LandingPage() {
   return (
     <>
-      <HeroSection />
-      <SkillsSection />
-      <JobExperience />
-      <ProjectsSection />
-      <TestimonialsSection />
-      <GitHubSection />
-      <LinkedInSection />
-      <ContactSection />
-      <div
-        aria-hidden="true"
-        className="follow-cursor"
-        style={{ left: position.x, top: position.y }}
-      />
+      <ServicesHero />
+      <MetricsStrip />
+      <section className="px-5 py-20 md:px-20" aria-labelledby="explore-heading">
+        <div className="mx-auto w-full max-w-7xl">
+          <header className="mb-12 max-w-2xl">
+            <h2 id="explore-heading" className="font-[Monument-R] text-3xl uppercase tracking-tight md:text-5xl">
+              Explore the site
+            </h2>
+          </header>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {destinations.map((destination, index) => (
+              <Link
+                key={destination.href}
+                href={destination.href}
+                className="card-hover min-w-0 border border-gray-200 p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:border-neutral-dark dark:focus-visible:ring-primary-light md:p-8"
+              >
+                <span className="mb-8 block text-[10px] uppercase tracking-[0.3em] text-text-secondary dark:text-neutral-light">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <h3 className="mb-4 text-xl font-bold md:text-2xl">{destination.label}</h3>
+                <p className="text-sm leading-relaxed text-text-secondary dark:text-neutral-light">{destination.text}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

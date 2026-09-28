@@ -5,7 +5,7 @@ const focusStyles =
 
 export default function FinalCtaSection() {
   return (
-    <Section containerClassName="text-center">
+    <Section id="contact" containerClassName="text-center">
       <div className="mx-auto max-w-3xl" data-aos="fade-up">
         <h2 className="mb-6 font-[Monument-R] text-3xl uppercase tracking-tight md:text-5xl">
           Have a cloud problem that needs solving?
@@ -25,7 +25,7 @@ export default function FinalCtaSection() {
             />
           </a>
           <a
-            href="/#projects"
+            href="/portfolio"
             className={`group inline-flex justify-center gap-2 border border-gray-800 px-6 py-3 text-sm font-medium transition-all duration-200 hover:bg-gray-800 hover:text-white dark:border-neutral-light dark:hover:bg-neutral-light dark:hover:text-background-dark ${focusStyles}`}
           >
             View My Work

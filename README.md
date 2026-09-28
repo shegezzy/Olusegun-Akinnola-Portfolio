@@ -1,6 +1,6 @@
-# Olusegun Akinnola - Portfolio Website
+# Olusegun Akinnola - Cloud Services & Portfolio Website
 
-A world-class, interactive portfolio website showcasing my skills, projects, and professional journey as a Full-Stack Software Engineer.
+A Cloud & DevOps services website with a dedicated portfolio showcasing skills, projects, and professional experience.
 
 ## 🌟 Features
 
@@ -87,8 +87,13 @@ my-portfolio/
 ├── app/
 │   ├── data/              # Mock data and content
 │   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Home page
+│   ├── portfolio/         # Dedicated portfolio route
+│   ├── services/          # Full services page
+│   ├── faq/               # FAQ page
+│   ├── about/             # About page
+│   ├── contact/           # Contact page
+│   ├── layout.tsx         # Shared root layout
+│   └── page.tsx           # Concise Cloud & DevOps landing page
 ├── components/
 │   ├── sections/          # Page sections
 │   │   ├── HeroSection.tsx
@@ -186,7 +191,7 @@ Modify the color palette in `tailwind.config.ts`
 
 ### Add New Sections
 
-Create new components in `components/sections/` and import them in `app/page.tsx`
+Create new components in `components/sections/` and import them into the relevant route.
 
 ## 📄 License
 

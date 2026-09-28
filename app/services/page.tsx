@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import CloudWatchdogSection from '@/components/services/CloudWatchdogSection';
-import FaqSection from '@/components/services/FaqSection';
 import FinalCtaSection from '@/components/services/FinalCtaSection';
 import HowIWorkSection from '@/components/services/HowIWorkSection';
 import MetricsStrip from '@/components/services/MetricsStrip';
@@ -9,6 +8,7 @@ import ProofSection from '@/components/services/ProofSection';
 import ServicesHero from '@/components/services/ServicesHero';
 import ServicesGrid from '@/components/services/ServicesGrid';
 import WhoIWorkWithSection from '@/components/services/WhoIWorkWithSection';
+import TestimonialsSection from '@/components/sections/TestimonialsSection';
 
 export const metadata: Metadata = {
   title: {
@@ -52,9 +52,9 @@ export default function ServicesPage() {
       <ServicesGrid />
       <HowIWorkSection />
       <ProofSection />
+      <TestimonialsSection />
       <WhoIWorkWithSection />
       <CloudWatchdogSection />
-      <FaqSection />
       <FinalCtaSection />
     </>
   );

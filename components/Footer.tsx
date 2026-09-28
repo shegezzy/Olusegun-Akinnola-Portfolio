@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 
 const Footer = () => {
   const pathname = usePathname();
+  const isPortfolio = pathname === '/portfolio';
+  const isServicesPage = pathname === '/services';
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -16,8 +18,9 @@ const Footer = () => {
   const handleSectionClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string,
+    route: string,
   ) => {
-    if (pathname !== '/') return;
+    if (pathname !== route) return;
 
     event.preventDefault();
     const element = document.getElementById(sectionId);
@@ -25,6 +28,31 @@ const Footer = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const quickLinks = isPortfolio
+    ? [
+        { label: 'Skills', href: '/portfolio#skills', id: 'skills', route: '/portfolio' },
+        { label: 'Experience', href: '/portfolio#experience', id: 'experience', route: '/portfolio' },
+        { label: 'Projects', href: '/portfolio#projects', id: 'projects', route: '/portfolio' },
+        { label: 'Contact', href: '/portfolio#contact', id: 'contact', route: '/portfolio' },
+        { label: 'Services', href: '/', route: '/' },
+        { label: 'FAQ', href: '/faq', route: '/faq' },
+      ]
+    : isServicesPage
+    ? [
+        { label: 'Services', href: '/services#services', id: 'services', route: '/services' },
+        { label: 'How I Work', href: '/services#how-i-work', id: 'how-i-work', route: '/services' },
+        { label: 'Work', href: '/portfolio', route: '/portfolio' },
+        { label: 'Contact', href: '/contact', route: '/contact' },
+        { label: 'FAQ', href: '/faq', route: '/faq' },
+      ]
+    : [
+        { label: 'Services', href: '/services', route: '/services' },
+        { label: 'Portfolio', href: '/portfolio', route: '/portfolio' },
+        { label: 'About', href: '/about', route: '/about' },
+        { label: 'Contact', href: '/contact', route: '/contact' },
+        { label: 'FAQ', href: '/faq', route: '/faq' },
+      ];
 
   return (
     <footer className="border-t border-gray-200 dark:border-neutral-dark">
@@ -87,50 +115,17 @@ const Footer = () => {
           <div>
             <h3 className="text-sm uppercase tracking-widest font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              <li>
-                <a
-                  href="/#skills"
-                  onClick={(event) => handleSectionClick(event, 'skills')}
-                  className="text-sm text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors"
-                >
-                  Skills
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/#experience"
-                  onClick={(event) => handleSectionClick(event, 'experience')}
-                  className="text-sm text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors"
-                >
-                  Experience
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/#projects"
-                  onClick={(event) => handleSectionClick(event, 'projects')}
-                  className="text-sm text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors"
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/#contact"
-                  onClick={(event) => handleSectionClick(event, 'contact')}
-                  className="text-sm text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors"
-                >
-                  Contact
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-sm text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors"
-                >
-                  Services
-                </Link>
-              </li>
+              {quickLinks.map(({ label, href, id, route }) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    onClick={id ? (event) => handleSectionClick(event, id, route) : undefined}
+                    className="text-sm text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

@@ -3,7 +3,7 @@ import Section from './Section';
 
 export default function HowIWorkSection() {
   return (
-    <Section heading="A practical approach to cloud engineering">
+    <Section id="how-i-work" heading="A practical approach to cloud engineering">
       <ol className="border-t border-gray-200 dark:border-neutral-dark">
         {workSteps.map((step, index) => (
           <li

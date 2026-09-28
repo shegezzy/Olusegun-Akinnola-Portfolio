@@ -13,14 +13,15 @@
 
 - **Owner:** Olusegun Akinnola — DevOps / SRE / Platform Engineer, Lagos, Nigeria (open to remote)
 - **Site:** https://olusegunakinnola.com
-- **Purpose:** Engineering portfolio. Being extended with a `/services` page (Cloud & DevOps Services).
+- **Purpose:** Cloud & DevOps service-business site with a concise landing page at `/`, full services at `/services`, and the unchanged engineering portfolio at `/portfolio`.
 - **Source of truth for visual identity:** the existing site. The site wins over any prompt that describes a different look.
 
 ## 2. Observed structure (from the live site)
 
 - Framework: **Next.js 16.1.6 with the App Router** (`app/layout.tsx`, `app/page.tsx`, route handlers, and file-based metadata routes).
-- Currently a **single-page layout** with anchor sections: Hero → Skills → Work Experience → Recent Live Projects → Testimonials → GitHub Activity → Featured LinkedIn → Contact → Footer.
-- Nav / footer quick links: **Skills, Experience, Projects, Contact** (anchors, not separate routes).
+- The site has a concise landing page at `/`, full services at `/services`, the portfolio at `/portfolio`, and focused `/about`, `/faq`, and `/contact` pages.
+- The portfolio keeps its original anchor sections: Hero → Skills → Work Experience → Recent Live Projects → Testimonials → GitHub Activity → Featured LinkedIn → Contact → Footer. Its nav links use `/portfolio#skills`, `/portfolio#experience`, `/portfolio#projects`, and `/portfolio#contact`.
+- The services page anchors are `#services`, `#how-i-work`, `#faq`, and `#contact`; Work links to `/portfolio`.
 - Existing UI patterns to reuse:
   - Hero with status pill ("Available for work"), avatar, primary "Let's Talk" + "View Resume" links
   - Numbered section cards (01, 02, 03…), used in Skills and Projects
@@ -30,7 +31,7 @@
   - Marquee ticker ("Code · Commits · Open Source · Build in Public")
   - Contact block: email + Copy Email, phone, location, social icons
 - Existing contact mechanism: `mailto:shegezzy@gmail.com` ("Say Hello") and the `#contact` section. **Reuse this for all CTAs.** Do not add forms, backends, or third-party booking.
-- Because the site is anchor-based, adding `/services` means **nav links must work from both `/` and `/services`** (e.g. `/#contact`, `/#projects`). Do not break existing anchor scrolling. Currently `components/Navbar.tsx` and `components/Footer.tsx` render client-side buttons whose handlers call `document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })`; these work only when the section is in the current document. The homepage section IDs are `skills`, `experience`, `projects`, and `contact`, and global `html { scroll-behavior: smooth; }` provides native smooth scrolling for hash URLs.
+- `components/Navbar.tsx` and `components/Footer.tsx` are route-aware. Same-page anchors use `scrollIntoView({ behavior: 'smooth' })`; cross-page links use full route-qualified hashes. Global `html { scroll-behavior: smooth; }` preserves native hash scrolling. The landing links to focused `/services`, `/faq`, `/about`, and `/contact` pages.
 
 ## 3. Design tokens — fill from the codebase, then keep in sync
 
@@ -51,9 +52,10 @@ Do not guess. Read the Tailwind config / global CSS / theme files and record rea
 | Breakpoints | Tailwind defaults: `sm` 640px, `md` 768px, `lg` 1024px, `xl` 1280px, `2xl` 1536px. Most layout changes occur at `md`; desktop nav switches at `lg`. |
 | Dark mode? (toggle / system / none) | Class-based dark mode. `ThemeContext` restores `localStorage`, otherwise initializes from `prefers-color-scheme`; `ThemeToggle` switches the root `.dark` class. |
 | Icon library | Remix Icon via its CDN font stylesheet in `app/layout.tsx`; icons use `ri-*` classes. The package also declares `remixicon`. |
-| Animation library / pattern (Framer Motion, CSS, none) | AOS powers one-time scroll reveals (typically 600–1000ms); Tailwind/CSS transitions and keyframes handle hover, fade/slide/scale, ticker, and cursor effects. GSAP/ScrollTrigger is globally imported but not used by the current React components. `react-fast-marquee` is installed, while the visible ticker also has custom CSS marquee keyframes. No Framer Motion. |
+| Animation library / pattern (Framer Motion, CSS, none) | AOS powers one-time scroll reveals (typically 600–1000ms); Tailwind/CSS transitions and keyframes handle hover, fade/slide/scale, ticker, and cursor effects. GSAP/ScrollTrigger is installed but not used by the current React components. `react-fast-marquee` is installed, while the visible ticker also has custom CSS marquee keyframes. No Framer Motion. |
 | Button variants (primary / secondary / ghost) and file location | Reusable `primary`, `secondary`, and `ghost` variants with `sm`/`md`/`lg` sizes in `components/ui/Button.tsx`; homepage sections also use locally styled links/buttons, commonly solid gray-800 and outlined gray-800 variants. |
 | Existing accordion component? (path) | None found in `app/` or `components/`. |
+| Services-specific reusable components | `components/services/Section.tsx` provides the shared section shell; service sections live beside it. The FAQ uses native `details`/`summary`; service content is typed in `app/services.data.ts`. No new visual tokens were introduced. |
 
 Rules once filled:
 - Use tokens, not raw hex values, in new code.
@@ -88,7 +90,7 @@ Never invent clients, certifications, technologies, metrics, testimonials, or ac
 - USD selling rate: 1 USD = ₦1,346.98
 - EUR remains the source price. USD and NGN displays are derived from these rates and rounded to whole currency units; `Custom` remains unchanged.
 
-**Metrics requested for `/services` that do NOT match the live site — must be confirmed before use:**
+**Metrics previously requested for the services landing that do NOT match the live site — must be confirmed before use:**
 - "25% cloud infrastructure cost reduction" — site says **15%**
 - "$15K+ AWS refunds and credits secured during security incident response" — not on the site
 
@@ -96,7 +98,7 @@ Rule: if a number is not confirmed against the resume, do not publish it. Ask, o
 
 **Experience years:** the site currently says both "4+ years" (hero) and "6+ years" (meta description). Do not repeat either on new pages until reconciled.
 
-**Existing projects to link to, not duplicate:** Loubby AI, Cybermap, SafeSteps, Fitbux AI Chatbot, Digital Encode Platform, ICE Queue. Link to `/#projects` rather than copying descriptions.
+**Existing projects to link to, not duplicate:** Loubby AI, Cybermap, SafeSteps, Fitbux AI Chatbot, Digital Encode Platform, ICE Queue. Link to `/portfolio#projects` rather than copying descriptions.
 
 **Real testimonials exist** on the site (e.g. Bibin Mathew, Product Owner, Cybermap). Reuse the existing testimonial component if a testimonial is wanted. Never write new ones.
 
@@ -125,9 +127,9 @@ If something in the codebase makes a change risky (for example the anchor-only n
 
 ## 9. Definition of done
 
-- [ ] Home, About, Projects, Experience, Skills unchanged
-- [ ] Existing nav, anchors, and contact still work
-- [ ] `/services` route works; "Services" in desktop and mobile nav, active state if the site has one
+- [ ] `/portfolio` renders the former homepage design, content, behavior, and animations unchanged
+- [ ] Route-aware desktop/mobile nav, anchors, footer links, and contact links work on `/` and `/portfolio`
+- [ ] `/` is a concise landing page; `/services` contains the full services page
 - [ ] SEO metadata via the project's existing approach (title: `Cloud & DevOps Services | Olusegun Akinnola`)
 - [ ] Lint, type check, tests (if present), and production build all pass
 - [ ] No console errors, no broken links, no horizontal overflow
@@ -140,3 +142,5 @@ Append one line per meaningful design decision or token update.
 
 - 2026-09-28: Verified the App Router, design tokens, shared UI patterns, dark mode, animation approach, and current same-document anchor implementation from the codebase; no visual changes made.
 - 2026-09-28: Recorded the owner-supplied EUR and USD selling-rate snapshot used by the services currency selector.
+- 2026-09-28: Reorganized the IA so `/` is the concise landing page, `/services` contains the full services page, and `/portfolio` preserves the former homepage; no new visual tokens were introduced.
+- 2026-09-28: Split the services experience into a concise `/` landing page plus focused `/services`, `/faq`, `/about`, and `/contact` routes using the existing components and design tokens.

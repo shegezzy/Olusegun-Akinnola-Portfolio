@@ -1,9 +1,18 @@
+ 'use client';
+
+import { useEffect } from 'react';
+import AOS from 'aos';
 import { faqItems } from '@/app/services/services.data';
 import Section from './Section';
 
 export default function FaqSection() {
+  useEffect(() => {
+    AOS.init({ duration: 600, once: true });
+  }, []);
+
   return (
     <Section
+      id="faq"
       heading="FAQ"
       className="bg-neutral-light bg-opacity-5 dark:bg-neutral-dark dark:bg-opacity-5"
     >

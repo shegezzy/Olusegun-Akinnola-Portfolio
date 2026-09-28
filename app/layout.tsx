@@ -3,6 +3,7 @@ import './globals.css';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { ThemeProvider } from '@/contexts/ThemeContext';
+import MouseFollower from '@/components/MouseFollower';
 
 const baseUrl = 'https://olusegunakinnola.com';
 
@@ -68,53 +69,6 @@ export const metadata: Metadata = {
   category: 'technology',
 };
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Person',
-      '@id': `${baseUrl}/#person`,
-      name: 'Olusegun Akinnola',
-      url: baseUrl,
-      image: `${baseUrl}/images/my-image.jpeg`,
-      jobTitle: 'Software Engineer',
-      description: ' I build secure, scalable infrastructure and reliable cloud platforms. 6 years of turning complex operational challenges into resilient, automated, and production-ready systems.',
-      email: 'shegezzy@gmail.com',
-      sameAs: [
-        'https://github.com/shegezzy',
-        'https://www.linkedin.com/in/olusegunakinnola',
-        'https://x.com/shegezzy',
-        'https://www.instagram.com/bigshegzzzz/',
-      ],
-      knowsAbout: [
-        `AWS`, `Kubernetes`, `Docker`, `Terraform`, `Ansible`,
-        `Linux`, `CI/CD`, `GitHub Actions`, `Jenkins`, `NGINX`,
-        `Prometheus`, `Grafana`, `ELK Stack`, `CloudWatch`, `Redis`,
-`PostgreSQL`, `MongoDB`, `Site Reliability Engineering`, `Infrastructure as Code`,
-`Platform Engineering`, `Cloud Security`, `Observability`, `Incident Response`
-
-      ],
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Lagos',
-        addressCountry: 'NG',
-      },
-      worksFor: {
-        '@type': 'Organization',
-        name: 'AB-InBev',
-      },
-    },
-    {
-      '@type': 'WebSite',
-      '@id': `${baseUrl}/#website`,
-      url: baseUrl,
-      name: 'Olusegun Akinnola',
-      description: 'Portfolio of Olusegun Akinnola —  Software Engineer',
-      author: { '@id': `${baseUrl}/#person` },
-    },
-  ],
-};
-
 export default function RootLayout({
   children,
 }: {
@@ -131,14 +85,11 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
       </head>
       <body className="font-body">
         <ThemeProvider>
           <Navbar />
+          <MouseFollower />
           <main className="pt-20">
             {children}
           </main>

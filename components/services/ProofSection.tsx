@@ -31,7 +31,7 @@ export default function ProofSection() {
       </div>
 
       <a
-        href="/#projects"
+        href="/portfolio#projects"
         className={`group mt-10 inline-flex items-center gap-2 border-b-2 border-gray-800 pb-1 text-sm font-semibold transition-all duration-300 hover:gap-4 dark:border-neutral-light ${focusStyles}`}
       >
         See all projects
