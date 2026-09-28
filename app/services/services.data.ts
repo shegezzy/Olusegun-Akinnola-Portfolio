@@ -1,0 +1,163 @@
+export interface ServiceProblem {
+  title: string;
+  description: string;
+}
+
+export interface ServiceOffering {
+  title: string;
+  description: string;
+  bullets: readonly string[];
+  price: string;
+  ctaLabel: string;
+  mailtoSubject: string;
+  note?: string;
+}
+
+export type ServiceCurrency = 'EUR' | 'USD' | 'NGN';
+
+export const sellingRatesInNgn = {
+  EUR: 1571.52,
+  USD: 1346.98,
+  NGN: 1,
+} as const satisfies Record<ServiceCurrency, number>;
+
+export const serviceProblems: readonly ServiceProblem[] = [
+  {
+    title: 'AWS costs growing unexpectedly',
+    description:
+      'Identify unnecessary resources, inefficient infrastructure, and optimization opportunities.',
+  },
+  {
+    title: 'Deployments are unreliable',
+    description:
+      'Diagnose CI/CD failures and improve deployment workflows.',
+  },
+  {
+    title: 'Production systems lack visibility',
+    description:
+      'Improve monitoring, alerting, logging, and operational visibility.',
+  },
+  {
+    title: 'AWS security needs attention',
+    description:
+      'Review IAM, access controls, monitoring, and common cloud security gaps.',
+  },
+  {
+    title: 'Infrastructure is manually configured',
+    description:
+      'Move infrastructure toward reproducible Infrastructure as Code.',
+  },
+  {
+    title: 'Production incidents keep happening',
+    description:
+      'Investigate incidents, perform root-cause analysis, and improve operational reliability.',
+  },
+];
+
+export const serviceOfferings: readonly ServiceOffering[] = [
+  {
+    title: 'AWS Cost Optimization Review',
+    description:
+      'Identify unnecessary AWS spending and receive a prioritized plan to improve cloud efficiency without compromising production performance.',
+    bullets: [
+      'AWS resource review',
+      'Cost analysis',
+      'Rightsizing opportunities',
+      'Unused-resource identification',
+      'Prioritized recommendations',
+    ],
+    price: 'From €149',
+    ctaLabel: 'Request a Cost Review',
+    mailtoSubject: 'AWS Cost Optimization Review request',
+  },
+  {
+    title: 'AWS Security Health Check',
+    description:
+      'A practical review of your AWS environment to identify common security and governance gaps before they become expensive problems.',
+    bullets: [
+      'IAM review',
+      'MFA configuration',
+      'CloudTrail review',
+      'GuardDuty review',
+      'Access review',
+      'S3 access review',
+      'Security group review',
+      'Credential/access hygiene',
+    ],
+    price: 'From €149',
+    ctaLabel: 'Request a Security Review',
+    mailtoSubject: 'AWS Security Health Check request',
+    note: 'Not a compliance certification or penetration test.',
+  },
+  {
+    title: 'CI/CD & Deployment Support',
+    description:
+      'Diagnose broken deployment pipelines and improve the path from source code to production.',
+    bullets: [
+      'GitHub Actions',
+      'GitLab CI',
+      'Jenkins',
+      'Docker',
+      'Amazon ECR',
+      'AWS deployment workflows',
+      'OIDC authentication',
+      'Deployment troubleshooting',
+    ],
+    price: 'From €100',
+    ctaLabel: 'Fix My Pipeline',
+    mailtoSubject: 'CI/CD support request',
+  },
+  {
+    title: 'AWS Infrastructure & Terraform',
+    description:
+      'Build or improve reproducible AWS infrastructure using Infrastructure as Code.',
+    bullets: [
+      'Terraform',
+      'AWS networking',
+      'ECS/Fargate',
+      'ECR',
+      'ALB',
+      'IAM',
+      'CloudWatch',
+      'Reusable infrastructure patterns',
+    ],
+    price: 'Custom',
+    ctaLabel: 'Discuss Infrastructure',
+    mailtoSubject: 'AWS Infrastructure & Terraform enquiry',
+  },
+  {
+    title: 'Observability & Monitoring',
+    description:
+      'Improve visibility into production systems so your team can detect and investigate problems before they become bigger incidents.',
+    bullets: [
+      'Prometheus',
+      'Grafana',
+      'CloudWatch',
+      'Application metrics',
+      'Infrastructure monitoring',
+      'Alerting',
+      'Logging',
+      'Operational dashboards',
+    ],
+    price: 'From €200',
+    ctaLabel: 'Improve Monitoring',
+    mailtoSubject: 'Observability & Monitoring enquiry',
+  },
+  {
+    title: 'Production Troubleshooting & Reliability',
+    description:
+      'Investigate production incidents, identify root causes, and improve the reliability of cloud infrastructure and applications.',
+    bullets: [
+      'Incident investigation',
+      'Root-cause analysis',
+      'Infrastructure troubleshooting',
+      'Service restoration',
+      'Reliability improvements',
+      'Operational runbooks',
+      'Post-incident recommendations',
+    ],
+    price: 'Custom',
+    ctaLabel: 'Discuss a Production Issue',
+    mailtoSubject: 'Production troubleshooting enquiry',
+  },
+];

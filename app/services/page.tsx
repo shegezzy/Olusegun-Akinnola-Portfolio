@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import ProblemsSection from '@/components/services/ProblemsSection';
 import ServicesHero from '@/components/services/ServicesHero';
+import ServicesGrid from '@/components/services/ServicesGrid';
 
 export const metadata: Metadata = {
   title: {
@@ -13,5 +15,11 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  return <ServicesHero />;
+  return (
+    <>
+      <ServicesHero />
+      <ProblemsSection />
+      <ServicesGrid />
+    </>
+  );
 }
