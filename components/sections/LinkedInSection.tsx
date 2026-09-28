@@ -16,14 +16,16 @@ const posts = [
 
     excerpt:
       "Security.",
-    image: "/images/linkedin/oidc-aws-access.svg",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D22AQHqzF4fb61s-Q/feedshare-shrink_800/B4DZnF3YfsKsAg-/0/1759961257425?e=1780531200&v=beta&t=uolClFLmc6D7-QFEpo6mnzS9ZvL4_n5mkVTBPeg5-cM",
   },
   {
     id: "7301039725677539332",
     title: "Zero 𝗗𝗼𝘄𝗻𝘁𝗶𝗺𝗲 𝗗𝗲𝗽𝗹𝗼𝘆𝗺𝗲𝗻𝘁𝘀 with Blue-Green 𝗗𝗲𝗽𝗹𝗼𝘆𝗺𝗲𝗻𝘁 in CI/CD Pipeline!",
     excerpt:
       "CI-CD",
-    image: "/images/linkedin/blue-green-cicd.svg",
+    image:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80",
   },
   {
     id: "7229133258930700289",
@@ -31,7 +33,8 @@ const posts = [
 
     excerpt:
       "Cloud-Native",
-    image: "/images/linkedin/cloud-native-devsecops-k8s.svg",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D22AQGIFYgYPWedig/feedshare-shrink_800/feedshare-shrink_800/0/1723559677627?e=1780531200&v=beta&t=6par-NqdVfq27Kanv8shNWwF5iFmLzpuMJgfLTZfBBY",
   },
 ];
 

@@ -135,15 +135,14 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a
-                  href="/assets/pdf/OLUSEGUN-AKINNOLA_Resume.pdf"
+                <Link
+                  href="https://drive.google.com/file/d/1ZYgVMZegbVinlOMN1r4XUvk5xF_lwopQ/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="button button--flex inline-flex items-center gap-2 px-6 py-3 border border-gray-800 dark:border-neutral-light text-sm font-medium hover:bg-gray-800 hover:text-white dark:hover:bg-neutral-light dark:hover:text-background-dark transition-all duration-200"
+                  className="text-sm text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors"
                 >
-                  View Resume
-                  <i className="uil uil-external-link-alt button__icon" aria-hidden="true"></i>
-                </a>
+                  Resume
+                </Link>
               </li>
             </ul>
           </div>

@@ -1,6 +1,6 @@
 # Olusegun Akinnola - Portfolio Website
 
-An interactive portfolio website showcasing my skills, projects, and professional journey as a Full-Stack Software Engineer.
+A world-class, interactive portfolio website showcasing my skills, projects, and professional journey as a Full-Stack Software Engineer.
 
 ## 🌟 Features
 
@@ -197,9 +197,8 @@ This project is open source and available under the [MIT License](LICENSE).
 **Olusegun Akinnola**
 
 - Email: shegezzy@gmail.com
-- Linkedin: [linkedin.com/in/olusegunakinnola](https://www.linkedin.com/in/olusegunakinnola)
+- LinkedIn: [linkedin.com/in/olusegunakinnola](https://www.linkedin.com/in/olusegunakinnola)
 - GitHub: [github.com/shegezzy](https://github.com/shegezzy)
-- Website: [olusegunakinnola.com](https://olusegunakinnola.com/)
 
 ---
 

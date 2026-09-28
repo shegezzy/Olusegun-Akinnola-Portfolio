@@ -131,10 +131,6 @@ export default function RootLayout({
         />
         <link
           rel="stylesheet"
-          href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
-        />
-        <link
-          rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
         />
         <script

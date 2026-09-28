@@ -63,7 +63,7 @@ export interface ContactFormData {
 
 export type Theme = 'light' | 'dark';
 
-export type ProjectCategoryType = 'All' | 'Cloud & Platform Engineering' | 'DevOps & Site Reliability';
+export type ProjectCategoryType = 'All' | 'Cloud & Platform Engineering' | 'DevOps & Site Reliability' | 'Full-Stack';
 export type SkillCategoryType = 'Cloud & Platform Engineering' | 'DevOps & Site Reliability' | 'Tools & Operations' | 'Other';
 
 export interface Tweet {

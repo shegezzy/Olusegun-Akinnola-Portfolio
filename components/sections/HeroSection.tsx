@@ -77,26 +77,21 @@ const HeroSection: React.FC = () => {
         {/* Bio */}
         <p className="text-base md:text-lg text-[#656464] dark:text-neutral-light leading-relaxed mb-10 max-w-lg">
           I build secure, scalable infrastructure and reliable cloud platforms.
-          4+ years of turning complex operational challenges into resilient, automated, and production-ready systems.
+          3+ years of turning complex operational challenges into resilient, automated, and production-ready systems.
 
         </p>
 
         {/* CTAs */}
         <div className="flex flex-wrap gap-3 mb-10">
-          <div className="about__buttons">
-            <a
-              href="/assets/pdf/OLUSEGUN-AKINNOLA_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button button--flex group inline-flex items-center gap-2 px-6 py-3 border border-gray-800 dark:border-neutral-light text-sm font-medium hover:bg-gray-800 hover:text-white dark:hover:bg-neutral-light dark:hover:text-background-dark transition-all duration-200"
-            >
-              View Resume
-              <i
-                className="uil uil-external-link-alt button__icon"
-                aria-hidden="true"
-              />
-            </a>
-          </div>
+          <a
+            href="https://drive.google.com/file/d/1ZYgVMZegbVinlOMN1r4XUvk5xF_lwopQ/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-2 px-6 py-3 border border-gray-800 dark:border-neutral-light text-sm font-medium hover:bg-gray-800 hover:text-white dark:hover:bg-neutral-light dark:hover:text-background-dark transition-all duration-200"
+          >
+            View Resume
+            <i className="ri-arrow-right-line group-hover:translate-x-0.5 transition-transform duration-200" />
+          </a>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="group flex items-center gap-2 px-6 py-3 bg-gray-800 dark:bg-neutral-light text-white dark:text-background-dark text-sm font-medium hover:opacity-80 transition-opacity duration-200"

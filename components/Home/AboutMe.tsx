@@ -51,21 +51,8 @@ const AboutMe = ({ changeCursor }: any) => {
             </p>
           </div>
 
-          <div className="md:px-5 py-2 flex md:flex-row flex-col gap-5">
-            <div className="about__buttons">
-              <a
-                href="/assets/pdf/OLUSEGUN-AKINNOLA_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button button--flex group inline-flex items-center gap-2 px-6 py-3 border border-gray-800 dark:border-neutral-light text-sm font-medium hover:bg-gray-800 hover:text-white dark:hover:bg-neutral-light dark:hover:text-background-dark transition-all duration-200"
-              >
-                View Resume
-                <i
-                  className="uil uil-external-link-alt button__icon"
-                  aria-hidden="true"
-                />
-              </a>
-            </div>
+            <div className="md:px-5 py-2 flex md:flex-row flex-col gap-5">
+            <a href="https://drive.google.com/file/d/1ZYgVMZegbVinlOMN1r4XUvk5xF_lwopQ/view?usp=sharing" target="_blank" className="text-sm text-gray-800 pb-[6px]">View Resume <i className="ri-arrow-drop-right-line"></i></a>
           </div>
         </div>
         <div className="md:w-2/5">

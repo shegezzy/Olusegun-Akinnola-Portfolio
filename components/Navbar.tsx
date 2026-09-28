@@ -83,13 +83,12 @@ const Navbar: React.FC = () => {
         <div className='flex items-center gap-4 md:gap-6'>
           {/* Resume Link */}
           <a
-            href="/assets/pdf/OLUSEGUN-AKINNOLA_Resume.pdf"
+            href="https://drive.google.com/file/d/1ZYgVMZegbVinlOMN1r4XUvk5xF_lwopQ/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className='hidden md:inline-flex items-center gap-2 px-6 py-3 border border-gray-800 dark:border-neutral-light text-sm font-medium hover:bg-gray-800 hover:text-white dark:hover:bg-neutral-light dark:hover:text-background-dark transition-all duration-200 button button--flex'
+            className='hidden md:block text-sm text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors'
           >
-            View Resume
-            <i className='uil uil-external-link-alt button__icon' aria-hidden='true'></i>
+            Resume
           </a>
 
           {/* Divider */}
@@ -124,14 +123,14 @@ const Navbar: React.FC = () => {
             </button>
           ))}
           <a
-            href="/assets/pdf/OLUSEGUN-AKINNOLA_Resume.pdf"
+            href="https://drive.google.com/file/d/1ZYgVMZegbVinlOMN1r4XUvk5xF_lwopQ/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className='inline-flex items-center gap-2 px-6 py-3 border border-gray-800 dark:border-neutral-light text-base font-medium hover:bg-gray-800 hover:text-white dark:hover:bg-neutral-light dark:hover:text-background-dark transition-all duration-200 button button--flex'
+            className='py-3 text-base font-medium text-[#656464] dark:text-neutral-light hover:text-[#232121] dark:hover:text-background-light transition-colors flex items-center gap-2'
             onClick={() => setIsMenuOpen(false)}
           >
-            View Resume
-            <i className='uil uil-external-link-alt button__icon' aria-hidden='true'></i>
+            Resume
+            <i className='ri-external-link-line text-sm'></i>
           </a>
         </div>
       </div>

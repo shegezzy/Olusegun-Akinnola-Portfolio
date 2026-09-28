@@ -14,38 +14,43 @@ const JobExperience = () => {
   const experiences = [
     {
       company: 'Divverse LLC',
-      role: 'Cloud Infrastructure & DevOps Platform Engineer (Multi-Region SaaS Systems)',
+      role: 'DevOps Engineer',
       type: 'Full-time',
       location: 'Remote',
       period: 'Sep 2023 - Present',
       achievements: [
-        'Engineered and maintained scalable AWS cloud infrastructure using Terraform, Docker, ECS Fargate, and Kubernetes to support distributed microservices across three continents with 99.9% availability.',
-        'Led cloud cost optimization initiatives by analyzing usage patterns, rightsizing resources, and improving scaling strategies, reducing infrastructure cost by 15% without performance degradation.',
-        'Built and automated CI/CD pipelines using GitHub Actions to standardize build, test, and deployment workflows, reducing release cycles by 40%.',
+      'Designed and managed scalable AWS cloud infrastructure using Terraform and Docker, supporting distributed microservices with 99.9% system availability.',
+      'Built and automated end-to-end CI/CD pipelines using GitHub Actions, reducing deployment time by 40% and improving release reliability.',
+      'Implemented observability and monitoring solutions using CloudWatch and Prometheus for proactive incident detection and faster issue resolution.',
+      'Led infrastructure optimization initiatives, reducing cloud costs by 15% while maintaining scalability and platform performance.',
+      'Collaborated with engineering teams to enhance system resilience, operational efficiency, and infrastructure scalability.'
+
       ],
     },
     {
       company: 'WEMA Bank',
-      role: 'DevOps & Cloud Infrastructure Engineer (Banking & Fintech Systems)',
+      role: 'Devops Engineer',
       type: 'Full-time',
       location: 'Hybrid',
       period: 'June 2022 - Sept 2023',
       achievements: [
-        'Designed and implemented CI/CD pipelines using GitHub Actions, Docker, and Terraform, reducing manual deployment effort and improving release efficiency by 30%.',
-        'Built observability and monitoring systems using Prometheus, Grafana, and CloudWatch, ensuring proactive incident detection and maintaining 99.9% uptime for critical banking services.',
-        'Managed and scaled microservices infrastructure on Azure Kubernetes Service (AKS), supporting high-availability fintech workloads processing thousands of daily transactions.',
+        'Designed and automated CI/CD pipelines using GitHub Actions, Docker, and Terraform, improving deployment efficiency by 30% and eliminating manual release errors.',
+        'Implemented monitoring, logging, and performance tuning strategies, maintaining 99.9% uptime across critical banking services.',
+        'Managed and scaled microservices infrastructure on Azure Kubernetes Service (AKS), ensuring high availability and reliability for fintech applications processing thousands of daily transactions.',
+        'Drove incident response and root cause analysis for production systems, improving system resilience and reducing downtime.'
       ],
     },
     {
       company: 'United Bank of Africa',
-      role: 'Backend Engineer (High-Throughput Financial Systems)',
+      role: 'Backend Engineer',
       type: 'Full-time',
       location: 'Hybrid',
       period: 'Jan 2020 - June 2022',
       achievements: [
-        'Developed and optimized .NET Core microservices handling 1,000+ requests per second (3M+ monthly API calls) for core banking operations.',
-        'Designed scalable backend systems for payments, merchant onboarding, and banking integrations, improving transaction processing speed by 35%.',
-        'Built distributed system integrations across internal banking platforms and third-party APIs to improve interoperability and reliability.',
+        'Developed and optimized backend systems handling 1,000+ requests per second (3M+ monthly API calls), ensuring high performance and high availability for digital banking platforms.',
+        'Designed and maintained .NET Core microservices for payment processing, merchant onboarding, and banking integrations, improving transaction throughput by 35%.',
+        'Contributed to scalable distributed system architecture, enabling seamless integration with internal services and third-party APIs.',
+        'Collaborated with cross-functional engineering teams across multiple regions to deliver reliable features and improve platform scalability and resilience.'
 
       ],
     },
@@ -127,20 +132,14 @@ const JobExperience = () => {
         <div className="mt-16 pt-12 border-t border-gray-200 dark:border-neutral-dark text-center" data-aos="fade-up">
           <p className="text-sm text-[#656464] dark:text-neutral-light">
             Want to know more about my experience?{' '}
-            <span className="inline-block align-middle mt-4">
-              <a
-                href="/assets/pdf/OLUSEGUN-AKINNOLA_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button button--flex group inline-flex items-center gap-2 px-6 py-3 border border-gray-800 dark:border-neutral-light text-sm font-medium hover:bg-gray-800 hover:text-white dark:hover:bg-neutral-light dark:hover:text-background-dark transition-all duration-200"
-              >
-                View my full resume
-                <i
-                  className="uil uil-external-link-alt button__icon"
-                  aria-hidden="true"
-                />
-              </a>
-            </span>
+            <a 
+              href="https://drive.google.com/file/d/1ZYgVMZegbVinlOMN1r4XUvk5xF_lwopQ/view?usp=sharing" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold underline hover:text-[#232121] dark:hover:text-background-light transition-colors"
+            >
+              View my full resume
+            </a>
           </p>
         </div>
       </div>
