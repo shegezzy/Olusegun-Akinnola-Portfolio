@@ -16,7 +16,7 @@ export default function CloudWatchdogSection() {
       >
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-16">
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary dark:text-primary-light">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary dark:text-neutral-light">
               {watchdogOffering.price}
             </p>
             <h3 className="mb-8 text-2xl font-bold md:text-3xl">

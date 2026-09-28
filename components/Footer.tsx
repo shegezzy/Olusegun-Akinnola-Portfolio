@@ -34,7 +34,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className='flex items-center gap-3 mb-6'>
-              <Image src="/images/my-image.jpeg" alt="Olusegun Akinnola" width={48} height={48} className='rounded-full object-cover w-12 h-12' />
+              <Image src="/images/my-image.jpeg" alt="" width={48} height={48} className='rounded-full object-cover w-12 h-12' />
               <div className='font-semibold text-lg'>Olusegun Akinnola</div>
             </div>
             <p className="text-sm text-[#656464] dark:text-neutral-light mb-6 max-w-sm">

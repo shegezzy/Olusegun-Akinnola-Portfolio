@@ -83,6 +83,11 @@ Never invent clients, certifications, technologies, metrics, testimonials, or ac
 - 40% shorter release cycles (Divverse)
 - 30% release-efficiency improvement (WEMA)
 
+**Currency conversion snapshot confirmed by the owner on 2026-09-28:**
+- EUR selling rate: 1 EUR = ₦1,571.52
+- USD selling rate: 1 USD = ₦1,346.98
+- EUR remains the source price. USD and NGN displays are derived from these rates and rounded to whole currency units; `Custom` remains unchanged.
+
 **Metrics requested for `/services` that do NOT match the live site — must be confirmed before use:**
 - "25% cloud infrastructure cost reduction" — site says **15%**
 - "$15K+ AWS refunds and credits secured during security incident response" — not on the site
@@ -134,3 +139,4 @@ If something in the codebase makes a change risky (for example the anchor-only n
 Append one line per meaningful design decision or token update.
 
 - 2026-09-28: Verified the App Router, design tokens, shared UI patterns, dark mode, animation approach, and current same-document anchor implementation from the codebase; no visual changes made.
+- 2026-09-28: Recorded the owner-supplied EUR and USD selling-rate snapshot used by the services currency selector.

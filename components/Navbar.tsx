@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
       <nav className='fixed top-0 left-0 right-0 w-full py-6 bg-background-light dark:bg-background-dark z-40'>
         <div className='max-w-7xl mx-auto px-5 md:px-20 flex justify-between items-center'>
           <div className='flex items-center gap-3'>
-            <Image src="/images/my-image.jpeg" alt="Olusegun Akinnola" width={40} height={40} className='rounded-full object-cover w-10 h-10' />
+            <Image src="/images/my-image.jpeg" alt="" width={40} height={40} className='rounded-full object-cover w-10 h-10' />
             <div className='font-semibold text-base'>Olusegun Akinnola</div>
           </div>
         </div>
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className='flex items-center gap-3 cursor-pointer group'
         >
-          <Image src="/images/my-image.jpeg" alt="Olusegun Akinnola" width={40} height={40} className='rounded-full object-cover w-10 h-10' />
+          <Image src="/images/my-image.jpeg" alt="" width={40} height={40} className='rounded-full object-cover w-10 h-10' />
           <div className='font-semibold text-base group-hover:text-primary dark:group-hover:text-primary-light transition-colors'>
             Olusegun Akinnola
           </div>

@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Footer from '@/components/Footer';
-import 'gsap/dist/gsap';
-import 'gsap/dist/ScrollTrigger';
 import Navbar from '@/components/Navbar';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 
